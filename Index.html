@@ -8,6 +8,19 @@
 	
   <body style="padding:0px;margin:0px;width:100vw;height:100vh; background-color:#eee;">
     <iframe
+	    function test(){
+showURL("http://www.google.com")
+}
+//
+function showURL(href){
+  var app = UiApp.createApplication().setHeight(50).setWidth(200);
+  app.setTitle("Show URL");
+  var link = app.createAnchor('open ', href).setId("link");
+  app.add(link);  
+  var doc = SpreadsheetApp.getActive();
+  doc.show(app);
+  }
+	      var link = app.createAnchor(href, href).setId("link");
 		id="app"
 		src="https://script.google.com/macros/s/AKfycbyMdyMSzye5Ly8xehFVgl3gKxSjjhWBtbAzppASKC_XLhKNCRUkwSZ7_mrO2SX4BluWcw/exec"
 		frameborder="0"
